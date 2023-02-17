@@ -4,13 +4,10 @@ module.exports = async function (req, res, proceed) {
   // or, if this is the last policy, the relevant action.
   // > For more about where `req.me` comes from, check out this app's
   // > custom hook (`api/hooks/custom/index.js`).
-  console.log('req.me====================>', req.me);
-  console.log('req.me====================>', req.session);
   if (req.session.userId) {
     return proceed();
   }
 
-  //   console.log('test=================>');
   //   return proceed();
   //--•
   // Otherwise, this request did not come from a logged-in user.
